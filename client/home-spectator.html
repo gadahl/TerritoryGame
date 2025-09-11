@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Territory Game</title>
+</head>
+<body>
+    <h1>Territory Game (Spectator Mode)</h1>
+
+    <button onclick="window.location.href='/login'">Log In</button>
+
+    <ul id="player-list"></ul>
+
+    <script type="module">
+        import { loadPlayers } from './script.js';
+        loadPlayers("player-list");
+    </script>
+</body>
+</html>
