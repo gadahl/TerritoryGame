@@ -1,10 +1,10 @@
 /**
- * Loads player data from the server and populates the specified list element.
+ * Loads public game data from the server and populates the specified list element.
  * @param {string} listId The id of the list element to populate.
- * @returns {Promise<void>} A promise that resolves when the player list is loaded.
+ * @returns {Promise<void>} A promise that resolves when the public game list is loaded.
  */
-export function loadPlayers(listId) {
-    return fetch("/data/players")
+export function loadPublicGames(listId) {
+    return fetch("/data/public-games")
         .then(response => response.json())
         .then(json => {
             const playerList = document.getElementById(listId);
@@ -12,7 +12,8 @@ export function loadPlayers(listId) {
             for (const name in json) {
                 const info = json[name];
                 const li = document.createElement("li");
-                li.textContent = `${name} owns these territories: ${info.territories.join(", ")}`;
+                li.textContent = `${name}: Players: [${info.players.join(", ")}], Status: ${info.status}` 
+                    + (info.status === "Finished" ? `, Winner: ${info.winner}` : "");
                 playerList.appendChild(li);
             }
         });

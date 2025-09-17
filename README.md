@@ -18,7 +18,7 @@ SampleFlask/
 ```
 
 
-## Contents of `main.py`
+## Contents of `app.py`
 - Initializes the Flask app and sets a secret key for sessions.
 - Stores public and private player info in dictionaries.
 - Uses session cookies to keep users signed in individually.

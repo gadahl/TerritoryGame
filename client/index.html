@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Territory Game</title>
+    <title>Online Game Lobby</title>
 </head>
 <body>
-    <h1>Territory Game (Spectator Mode)</h1>
+    <h1>Online Game Lobby</h1>
 
     <button onclick="window.location.href='/login'">Log In</button>
 
-    <ul id="player-list"></ul>
+    <ul id="public-game-list"></ul>
 
     <script type="module">
-        import { loadPlayers } from './script.js';
-        loadPlayers("player-list");
+        import { loadPublicGames } from './script.js';
+        loadPublicGames("public-game-list");
     </script>
 </body>
 </html>
